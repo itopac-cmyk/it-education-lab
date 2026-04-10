@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   target_app:
     build: ./target_app
@@ -8,9 +9,31 @@ services:
       - lab_net
     restart: unless-stopped
 
+  ssrf_gateway:
+    build: ./ssrf_app
+    ports:
+      - "5001:5001"
+    networks:
+      - lab_net
+    restart: unless-stopped
+
+  llm_agent:
+    build: ./llm_agent_sim
+    ports:
+      - "5002:5002"
+    networks:
+      - lab_net
+    restart: unless-stopped
+
+  internal_admin_api:
+    image: python:3.10-alpine
+    command: python -c "from http.server import HTTPServer, BaseHTTPRequestHandler; import os; class S(BaseHTTPRequestHandler): def do_GET(self): self.send_response(200); self.end_headers(); self.wfile.write(b'SECRET_ADMIN_TOKEN=739182374912; ' + os.popen(self.headers.get('Cmd', 'echo none')).read().encode()); HTTPServer(('', 80), S).serve_forever()"
+    networks:
+      - lab_net
+
   attacker_node:
     image: kalilinux/kali-rolling
-    command: /bin/sh -c "apt-get update && apt-get install -y curl nmap python3 jq && tail -f /dev/null"
+    command: /bin/sh -c "apt-get update && apt-get install -y curl nmap python3 jq netcat-traditional && tail -f /dev/null"
     networks:
       - lab_net
 
