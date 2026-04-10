@@ -1,18 +1,19 @@
-# Zero-Day-Lab: Professional Cyber Security Education (Seminar Edition)
+# Zero-Day-Lab: Professional Cyber Security Education (2026 Edition)
 
 [![Educational Use](https://img.shields.io/badge/Purpose-Education-green)](SECURITY.md)
 [![Status](https://img.shields.io/badge/Status-Seminar%20Ready-blue)](docs/SEMINAR_THREAT_MANAGEMENT.md)
 
-## 🎯 The Seminar-Ready Lab
-This lab is a comprehensive framework for **Threat Management** and **Ethical Hacking** seminars. It provides a containerized microservice environment to demonstrate the mechanics of the most devastating attacks from 2020-2026.
+## 🎯 The Seminar-Ready Lab (April 2026 Update)
+This lab is a comprehensive framework for **Threat Management** and **Ethical Hacking** seminars. It covers the full spectrum from classic memory safety issues to the latest AI-driven threats.
 
 ### Advanced Seminar Modules:
-1.  **[Supply Chain Attacks:](vulnerable_apps/supply_chain_lib/)** XZ Utils / Log4j style backdoor simulation.
-2.  **[Identity & OAuth Exploitation:](lab_infra/auth_service/)** Bypassing perimeters via Token Theft.
-3.  **[Ransomware & EDR:](docs/scenarios/SCENARIO_4_RANSOMWARE.md)** Automated encryption and eBPF-based detection.
-4.  **[Hardware Side-Channels:](docs/scenarios/SCENARIO_5_HARDWARE_EXPLOITS.md)** Leakage via CPU Cache timing (Spectre/Meltdown).
-5.  **[Agentic AI Prompt Injection:](docs/scenarios/SCENARIO_3_LLM_AGENT_EXPLOIT.md)** Exploiting LLMs with system access.
-6.  **[Cloud-Native RCE & SSRF:](docs/scenarios/SCENARIO_2_SSRF_TO_RCE.md)** Gateway exploitation and pivoting.
+1.  **[AI-Automated Exploit Generation (AEG):](docs/scenarios/SCENARIO_6_AI_AEG.md)** The future of high-speed autonomous exploitation.
+2.  **[Supply Chain Attacks:](vulnerable_apps/supply_chain_lib/)** XZ Utils / Log4j style backdoor simulation.
+3.  **[Identity & OAuth Exploitation:](lab_infra/auth_service/)** Bypassing perimeters via Token Theft.
+4.  **[Ransomware & EDR:](docs/scenarios/SCENARIO_4_RANSOMWARE.md)** Automated encryption and eBPF-based detection.
+5.  **[Hardware Side-Channels:](docs/scenarios/SCENARIO_5_HARDWARE_EXPLOITS.md)** Leakage via CPU Cache timing (Spectre/Meltdown).
+6.  **[Agentic AI Prompt Injection:](docs/scenarios/SCENARIO_3_LLM_AGENT_EXPLOIT.md)** Exploiting LLMs with system access.
+7.  **[Cloud-Native RCE & SSRF:](docs/scenarios/SCENARIO_2_SSRF_TO_RCE.md)** Gateway exploitation and pivoting.
 
 ---
 

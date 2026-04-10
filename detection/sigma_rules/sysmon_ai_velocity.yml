@@ -1,0 +1,29 @@
+title: High-Velocity AI-Driven Exploit Probing
+id: abcdef-1234-5678-abcd-556677889900
+status: experimental
+description: Detects the high-velocity, programmatic patterns typical of AI-driven autonomous vulnerability scanning and exploitation (AEG agents).
+author: Isa Topac (Education Lab)
+date: 2026-04-10
+tags:
+    - attack.initial_access
+    - attack.reconnaissance
+logsource:
+    category: webserver
+    product: linux # Note: Adaptable for Nginx/Apache/IIS
+detection:
+    selection:
+        # Detects more than 50 unique exploit attempts (SSTI, RCE patterns) 
+        # from a single IP within a very short timeframe (< 5 seconds).
+        # This is characteristic of AI-automated "probing" loops.
+        count_attempts:
+            - '{{.*}}'
+            - 'popen'
+            - 'pickle'
+            - 'passwd'
+            - ';'
+    timeframe: 5s
+    condition: selection | count() > 50
+falsepositives:
+    - Aggressive vulnerability scanners (e.g., Nessus, Burp Suite) 
+      which can mimic AI-like velocity.
+level: high
