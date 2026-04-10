@@ -1,4 +1,4 @@
-# Zero-Day-Lab: Professional Cyber Security Education (Seminar Edition)
+# IT Zero-Day-Lab: Professional Cyber Security Education (Seminar Edition)
 
 [![Educational Use](https://img.shields.io/badge/Purpose-Education-green)](SECURITY.md)
 [![Status](https://img.shields.io/badge/Status-Seminar%20Ready-blue)](docs/SEMINAR_THREAT_MANAGEMENT.md)
